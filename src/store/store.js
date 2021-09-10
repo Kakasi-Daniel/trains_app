@@ -35,11 +35,11 @@ const reservation = createSlice({
       }
       return [...newState];
     },
-    clearStore(state) {
+    clearStore() {
       localStorage.removeItem('seats');
       return [];
     },
-    populateStore(state, action) {
+    populateStore(_, action) {
       return [...action.payload];
     },
   },

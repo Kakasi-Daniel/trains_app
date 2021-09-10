@@ -1,7 +1,6 @@
 import './Seat.css';
 import {useSelector,useDispatch} from 'react-redux'
 import actions from './store/store'
-import {useEffect} from 'react';
 
 function Seat(props) {
 
@@ -28,11 +27,11 @@ function Seat(props) {
     const ids = reservation.map(seat => seat.id)
 
     if(!props.available){
-       return <div className='seat unavailable'>{props.number}</div>
+       return <li className='seat unavailable'>{props.number}</li>
         
     }
 
-  return <div onClick={addSeatHandler} className={`seat${ids.includes(props.seatID) ? ' selected' : ''}${props.circled}`}>{props.number}</div>;
+  return <li onClick={addSeatHandler} className={`seat${ids.includes(props.seatID) ? ' selected' : ''}${props.circled}`}>{props.number}</li>;
 }
 
 export default Seat;

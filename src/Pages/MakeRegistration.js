@@ -2,10 +2,12 @@ import './MakeRegistration.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import {PulseLoader} from 'react-spinners'
 
 function MakeRegistration() {
   const [days, setDays] = useState([]);
   const [trains, setTrains] = useState([]);
+  const [loading, setLoading] = useState(true);
   const seats = useSelector((state) => state);
 
   useEffect(() => {
@@ -22,6 +24,7 @@ function MakeRegistration() {
         });
       }
       setTrains(trainsArray);
+      setLoading(false);
     })();
   }, []);
 
@@ -38,7 +41,6 @@ function MakeRegistration() {
 
   return (
     <div className="makeRegistrationContainer">
-      
 
       {seats[0]?.train ? (
         <div className="selectedTrain">
@@ -113,6 +115,7 @@ function MakeRegistration() {
           </li>
         </ul>
       </div>
+      <PulseLoader loading={loading} color='#fff' size={30} css={{display:'block',margin:'auto',width:'fit-content'}}/>
         <ul className="trains">
           {days.length === 0 ? (
             <>

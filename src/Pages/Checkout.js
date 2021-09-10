@@ -19,12 +19,8 @@ function Checkout() {
     localStorage.setItem('code', code);
   }
 
-  const copyCodeToClipboard = async () => {
-    try {
+  const copyCodeToClipboard = async () => {    
       await navigator.clipboard.writeText(code);
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
   };
 
   const deleteSeatHandler = (seatID) => {
@@ -79,7 +75,7 @@ function Checkout() {
                 wagonData[seat.wagonNumber-1].seats[seat.seatNumber-1].available=false
             })
 
-            const postWagonData = await fetch(
+            await fetch(
                 'https://trains-861bd-default-rtdb.firebaseio.com/trains/' +
                   seats[0].train +
                   '/wagons.json',
@@ -93,7 +89,7 @@ function Checkout() {
               );
 
 
-            const response = await fetch(
+            await fetch(
               'https://trains-861bd-default-rtdb.firebaseio.com/registrations/' +
                 code +
                 '.json',
@@ -129,7 +125,7 @@ function Checkout() {
       </Formik>
       <ul className="seatsList">
         {seats.map((seat) => (
-          <li>
+          <li key={seat.id} >
             <p>{seat.train}</p>
             <p>Wagon number: {seat.wagonNumber}</p>
             <p>{seat.type}</p>

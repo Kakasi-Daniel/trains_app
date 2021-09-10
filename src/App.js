@@ -1,6 +1,6 @@
 import './App.css';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import {  useDispatch } from 'react-redux';
 import MakeRegistration from './Pages/MakeRegistration';
 import Train from './Pages/Train';
 import Checkout from './Pages/Checkout';
@@ -9,7 +9,6 @@ import actions from './store/store';
 import Navigation from './Navigation';
 
 function App() {
-  const seats = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,12 +16,11 @@ function App() {
       const data = JSON.parse(localStorage.getItem('seats'));
       dispatch(actions.populateStore(data));
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
-     
-      <Navigation/>
+      <Navigation />
       <Switch>
         <Route path="/" exact>
           <MakeRegistration />
@@ -30,8 +28,14 @@ function App() {
         <Route path="/trains/:trainID" exact>
           <Train />
         </Route>
-        <Route path="/checkout" ex>
+        <Route path="/checkout">
           <Checkout />
+        </Route>
+        <Route path="/trains" exact>
+          <Redirect to="/" />
+        </Route>
+        <Route path="*">
+          <Redirect to="/" />
         </Route>
       </Switch>
     </BrowserRouter>

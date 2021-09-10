@@ -6,6 +6,10 @@ header{
 nav{
     width: fit-content;
     margin: auto;
+}
+
+nav ul{
+    list-style: none;
     display: flex;
 }
 
