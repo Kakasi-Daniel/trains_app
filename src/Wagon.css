@@ -1,0 +1,71 @@
+.wagon {
+  background-color: #fff;
+  height: 80px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: repeat(2, 25px);
+  grid-auto-flow: column;
+  gap: 20px;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  border: #000 solid 2px;
+  box-shadow: 0 0 10px #000;
+}
+
+.firstclass{
+    background-color: #b3a500;
+}
+
+.secondclass{
+    background-color: #c0c0c0;
+}
+
+.sleeping{
+    background-color: rgb(110, 58, 141);
+}
+
+.wagon::after,
+.wagon::before {
+  content: '+';
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  font-size: 25px;
+  height: 35px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  font-weight: 700;
+  transform: translateY(75%) rotate(45deg);
+  border: 1px #fff solid;
+  z-index: -1;
+}
+
+.wagon::before {
+  left: 10%;
+}
+.wagon::after {
+  right: 10%;
+}
+
+.wagonType {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-95%);
+  padding: 5px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-size: 15px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.opacityReduced{
+    opacity: .1;
+}

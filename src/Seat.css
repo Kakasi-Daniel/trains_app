@@ -1,0 +1,61 @@
+.seat{
+    width: 25px;
+    height: 25px;
+    background-color: #000;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.seat:hover{
+    transform: scale(1.1);
+}
+
+.legendColor{
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.selected{
+    background-color: rgb(0, 255, 85);
+    color: #000;
+}
+
+.unavailable{
+    background-color: red;
+}
+
+.unavailable:hover{
+    transform: scale(1);
+}
+
+.legendWrapper p{
+    text-align: center;
+    margin: 10px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.legend{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.legendItem{
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+.circled{
+    border: 3px solid greenyellow;
+}
