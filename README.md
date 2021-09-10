@@ -2,6 +2,8 @@
 
 [Database provided by Google Firebase](https://trains-861bd-default-rtdb.firebaseio.com/.json)
 
+[Live version](https://trains-861bd.web.app/)
+
 ## Used technologies / Frameworks
 
 I use the following technologies / frameworks in my project:
