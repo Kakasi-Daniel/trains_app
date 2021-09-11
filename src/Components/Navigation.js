@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import './Navigation.css'
 
 function Navigation() {
   const seats = useSelector((state) => state);

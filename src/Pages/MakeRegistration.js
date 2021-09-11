@@ -117,21 +117,8 @@ function MakeRegistration() {
       </div>
       <PulseLoader loading={loading} color='#fff' size={30} css={{display:'block',margin:'auto',width:'fit-content'}}/>
         <ul className="trains">
-          {days.length === 0 ? (
-            <>
-              {trains.map((train) => (
-                <li className="trainElement" key={train.trainName}>
-                  <Link to={'/trains/' + train.trainName}>
-                    <p className="trainDate">{train.date}</p>
-                    <p className="trainName">{train.trainName}</p>
-                  </Link>
-                </li>
-              ))}
-            </>
-          ) : (
-            <>
-              {trains.map((train) => {
-                if (days.includes(train.date)) {
+          {trains.map((train) => {
+                if (days.includes(train.date) || days.length === 0) {
                   return (
                     <li className="trainElement" key={train.trainName}>
                       <Link to={'/trains/' + train.trainName}>
@@ -143,8 +130,6 @@ function MakeRegistration() {
                 }
                 return null;
               })}
-            </>
-          )}
         </ul>
         </>
       )}

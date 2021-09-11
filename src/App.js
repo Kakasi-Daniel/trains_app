@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import {  useDispatch } from 'react-redux';
 import MakeRegistration from './Pages/MakeRegistration';
@@ -6,7 +5,7 @@ import Train from './Pages/Train';
 import Checkout from './Pages/Checkout';
 import { useEffect } from 'react';
 import actions from './store/store';
-import Navigation from './Navigation';
+import Navigation from './Components/Navigation';
 
 function App() {
   const dispatch = useDispatch();

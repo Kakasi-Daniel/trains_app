@@ -1,6 +1,6 @@
 import { useParams, Link, useHistory } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import Wagon from '../Wagon';
+import Wagon from '../Components/Wagon';
 import { useSelector } from 'react-redux';
 import './Train.css';
 import { PulseLoader } from 'react-spinners';

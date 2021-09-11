@@ -2,7 +2,7 @@ import './Checkout.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
-import Input from '../Input';
+import Input from '../Components/Input';
 import Randomstring from 'randomstring';
 import actions from '../store/store';
 import DeleteIcon from '@material-ui/icons/Delete';

@@ -1,6 +1,6 @@
 import './Seat.css';
 import {useSelector,useDispatch} from 'react-redux'
-import actions from './store/store'
+import actions from '../store/store'
 
 function Seat(props) {
 
