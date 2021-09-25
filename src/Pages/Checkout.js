@@ -45,7 +45,7 @@ function Checkout() {
             .matches(/^[0-9]+$/, 'CNP must be only digits')
             .min(13, 'CNP must be exactly 13 characters long')
             .max(13, 'CNP must be exactly 13 characters long')
-            .required('age is required'),
+            .required('CNP is required'),
           name: yup
             .string()
             .min(5, 'Minumum 5 characters')
